@@ -1,11 +1,4 @@
-CC=gcc
-CFLAGS= -Wall -pedantic -std=c99
+all: main
 
-SRCDIR = ./src/
-
-
-runMe:
-	$(CC) $(CFLAGS) -Iinclude $(SRCDIR)mainCalculator.c $(SRCDIR)largeFunctions.c $(SRCDIR)helperFunctions.c -o runMe
-
-clean:
-	rm runMe
+main: main.c connect.h
+	gcc -Wall -pedantic -std=c99 main.c -o main
